@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URACCESSBOX Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('background-image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      margin-bottom: 50px; /* Add space before the form */
+    }
+    .login-container {
+      max-width: 300px; /* Reduced width to make the box smaller */
+      margin: 20px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      text-align: center;
+      width: 100%;
+    }
+    .login-container input,
+    .login-container button {
+      width: 80%; /* All inputs and button have equal width */
+      padding: 10px;
+      margin: 8px 0;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    .login-container button {
+      background-color: #28a745;
+      color: white;
+    }
+    .login-container button:hover {
+      background-color: #218838;
+    }
+    .login-container .error {
+      color: red;
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>URACCESSBOX</h1> <!-- Title now visible at the top -->
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <input type="text" id="userId" placeholder="User ID">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p class="error" id="loginError"></p>
+  </div>
+
+  <script>
+    function login() {
+      const userId = document.getElementById("userId").value;
+      const password = document.getElementById("password").value;
+
+      // Basic login validation (you can change these credentials)
+      if (userId === "admin" && password === "admin123") {
+        // Redirect to the next page after login, or show successful login message
+        window.location.href = "index.html"; // Example redirection
+      } else {
+        document.getElementById("loginError").textContent = "Invalid User ID or Password";
+      }
+    }
+  </script>
+
+</body>
+</html>
